@@ -5,6 +5,7 @@ public class Palindrome extends Word
 	public void promptUser()
 		{
 		//An overridden method from the word class
+		System.out.println("Please enter at word you would like to make into a palindrome.");
 		}
 	
 	public void makeAPalindrome()

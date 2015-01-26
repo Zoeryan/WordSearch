@@ -1,10 +1,10 @@
-
+import java.util.Scanner;
 public class Runner
 	{
 
 	public static void main(String[] args)
 		{
-		// TODO Auto-generated method stub
+		
 		Word [] word = new Word [5];
 
 		}
