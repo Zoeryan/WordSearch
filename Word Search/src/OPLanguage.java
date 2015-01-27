@@ -1,10 +1,15 @@
+import java.util.Scanner;
+
 
 public class OPLanguage extends Word implements Conversion
 	{
-	@Override
-	public void promptUser()
+	//@Override
+	public static void promptUser()
 		{
 		//An overridden method from the word class
+		System.out.println("Please enter the word you want to convert to the OP language.");
+		Scanner input = new Scanner(System.in);
+		String userInput = input.next();
 		}
 	
 	public void makeOP()

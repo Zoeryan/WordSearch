@@ -4,8 +4,11 @@ public class Runner
 
 	public static void main(String[] args)
 		{
-		
-		Word [] word = new Word [5];
+		String userInput = MorseCode.promptUser();
+		MorseCode.makeMorseCode(userInput);
+		UserPrompt.greetUser();
+		UserPrompt.printMainScreen();
+		//Word [] word = new Word [5];
 
 		}
 
