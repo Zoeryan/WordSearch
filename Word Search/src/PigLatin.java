@@ -4,22 +4,38 @@ import java.util.Scanner;
 public class PigLatin extends Word
 	{
 	//@Override
-	public static void promptUser()
+	public static String promptUser()
 		{
 		//An overridden method from the word class
 		System.out.println("Please enter the word you want to convert to Pig Latin.");
 		Scanner input = new Scanner(System.in);
-		String userInput = input.next();
+		String findFirstVowel = "";
+		return findFirstVowel = input.nextLine();
 		}
 	
-	public void makePigLatin()
+	public static String makePigLatin(String u)
 		{
-		//will take the input String and make it into Pig Latin
+		
+        char v = Character.toLowerCase(u.charAt(0));
+
+        if (v == 'a' || v == 'e' || v == 'i' || v == 'o' || v == 'u')
+        {
+            String convertToPigLatin = u + "ay";
+            System.out.println(convertToPigLatin);
+        }
+        else
+        {
+            String first = u.substring(0,1);
+            String slice = u.substring(1,u.length());
+            String clue = slice + first + "ay";
+            System.out.println(clue);
 		}
-	@Override
-	public void createClue()
-		{
-		System.out.println("The pig latin of this word is ");
-		//this is an overridden method from the word class
+        return("");
 		}
+//	@Override
+//	public void createClue()
+//		{
+//		System.out.println("The pig latin of this word is ");
+//		//this is an overridden method from the word class
+//		}
 	}

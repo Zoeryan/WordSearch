@@ -14,7 +14,7 @@ public class MorseCode extends Word implements Conversion
 		{
 		String clue = "";
 		String[] dottie = { ".-", "-...", "-.-.", "-..", ".", "..-.", "--.",
-	            "....", "..", ".---", "-.-", ".-..", "--", "-.", "---", ".--.",
+				"....", "..", ".---", "-.-", ".-..", "--", "-.", "---", ".--.",
 	            "--.-", ".-.", "...", "-", "..-", "...-", ".--", "-..-",
 	            "-.--", "--..", ".----", "..---"};
 	            
@@ -28,21 +28,23 @@ public class MorseCode extends Word implements Conversion
 	    	if(u.substring(i , i + 1).equals(alpha[i]))
 	    		{
 	    		dottie[i] = alpha[i];
-	    		return (clue + dottie[i]);
+	    		clue.toUpperCase();
+	    		clue = (clue + dottie[i]);
+	    		
 	    		}
-	    	return(clue);
+	    	
 	    	}
-	    
-		//will take the input String and make it into Morse code
+	    System.out.println(clue);
+	    return("test");
 		}
 	
-	@Override
-	public void createClue()
-		{
-		System.out.println("The morse of this word is ");
-		//this is an overridden method from the word class
-		}
-	
+//	@Override
+//	public void createClue()
+//		{
+//		System.out.println("The morse of this word is ");
+//		//this is an overridden method from the word class
+//		}
+//	
 	@Override
 	public void covert()
 		{

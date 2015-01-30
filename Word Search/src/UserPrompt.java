@@ -11,7 +11,7 @@ public class UserPrompt
 		System.out.println("Please enter the number of the clue you want to make.");
 		System.out.println("1. Make a palindrome");
 		System.out.println("2. Make it Morse code");
-		System.out.println("3. My is into the OP language");
+		System.out.println("3. Make it into the OP language");
 		System.out.println("4. Make it an anagram");
 		System.out.println("5. Make it into Pig Latin");
 		Scanner input = new Scanner(System.in);
@@ -21,17 +21,21 @@ public class UserPrompt
 		{
 		case 1: 
 			{
-			Palindrome.promptUser();
+			String userInputPalindrome = Palindrome.promptUser();
+			Palindrome.makeAPalindrome(userInputPalindrome);
 			break;
 			}
 		case 2:
 			{
-			MorseCode.promptUser();
+			String userInputMorse = MorseCode.promptUser();
+			MorseCode.makeMorseCode(userInputMorse);
+			//Does not print the morse code clue
 			break;
 			}
 		case 3: 
 			{
-			OPLanguage.promptUser();
+			String userInputOPLanguage = OPLanguage.promptUser();
+			OPLanguage.makeOP(userInputOPLanguage);
 			break;
 			}
 		case 4:
@@ -41,7 +45,8 @@ public class UserPrompt
 			}
 		case 5:
 			{
-			PigLatin.promptUser();
+			String userInputPigLatin = PigLatin.promptUser();
+			PigLatin.makePigLatin(userInputPigLatin);
 			break;
 			}
 		default:
