@@ -17,20 +17,15 @@ public class MainScreen extends JPanel
 	public static void makeMainScreen()
 		{
 		Object[] optionsThree = {"Palindrome" , "Morse Code" , "OP Language" , "Anagram" , "Pig Latin"};
-		type = JOptionPane.showOptionDialog(frame, "What shape do you want to draw?",
-				"Shape Choice",
+		type = JOptionPane.showOptionDialog(frame, "what kind of clue do you want to make?",
+				"Clue Choice",
 				JOptionPane.YES_NO_CANCEL_OPTION,
 				JOptionPane.QUESTION_MESSAGE,
 				null, optionsThree, optionsThree[1]);	
 		
 	switch(type)
 	{
-	case 0:
-		{
-		Board.printBoard();
-		Clues.printClues();
-		System.out.println("Here is your word search!");
-		}
+	
 	case 1: 
 		{
 		String userInputPalindrome = Palindrome.promptUser();
