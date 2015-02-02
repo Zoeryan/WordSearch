@@ -24,4 +24,8 @@ public class Board
 //			return alphabet[c];
 //			}
 		}
+	public static void printBoard()
+		{
+		
+		}
 	}

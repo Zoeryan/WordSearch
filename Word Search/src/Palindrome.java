@@ -3,6 +3,7 @@ import java.util.Scanner;
 
 public class Palindrome extends Word
 	{
+	String clue = "";
 	//@Override
 	public static String promptUser()
 		{
@@ -23,10 +24,10 @@ public class Palindrome extends Word
 		return("test");
 		}
 	
-//	@Override
-//	public void createClue()
-//		{
-//		System.out.println("The palindrome of this word is ");
-//		//this is an overridden method from the word class
-//		}
+	//@Override
+	public void createClue()
+		{
+		System.out.println("The palindrome of this word is " + clue);
+		//this is an overridden method from the word class
+		}
 	}

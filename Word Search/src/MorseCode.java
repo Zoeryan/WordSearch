@@ -2,6 +2,7 @@ import java.util.Scanner;
 
 public class MorseCode extends Word implements Conversion
 	{
+	
 	//@Override
 	public static String promptUser()
 		{
@@ -13,7 +14,7 @@ public class MorseCode extends Word implements Conversion
 	public static String makeMorseCode(String u)
 		{
 		String clue = "";
-		String[] dottie = { ".-", "-...", "-.-.", "-..", ".", "..-.", "--.",
+		String[] dots = { ".-", "-...", "-.-.", "-..", ".", "..-.", "--.",
 				"....", "..", ".---", "-.-", ".-..", "--", "-.", "---", ".--.",
 	            "--.-", ".-.", "...", "-", "..-", "...-", ".--", "-..-",
 	            "-.--", "--..", ".----", "..---"};
@@ -27,10 +28,8 @@ public class MorseCode extends Word implements Conversion
 	    	char[] chars = u.toCharArray();
 	    	if(u.substring(i , i + 1).equals(alpha[i]))
 	    		{
-	    		dottie[i] = alpha[i];
-	    		clue.toUpperCase();
-	    		clue = (clue + dottie[i]);
-	    		
+	    		dots[i] = alpha[i];
+	    		clue = (clue + dots[i]);	    		
 	    		}
 	    	
 	    	}
