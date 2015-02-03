@@ -1,8 +1,9 @@
 import java.util.Scanner;
 
 
-public class OPLanguage extends Word //implements Conversion
+public class OPLanguage extends Clues
 	{
+	public static String clue = "";
 	//@Override
 	public static String promptUser()
 		{
@@ -25,12 +26,11 @@ public class OPLanguage extends Word //implements Conversion
 		return("test");
 		}
 	
-//	@Override
-//	public void createClue()
-//		{
-//		System.out.println("The OP of this word is ");
-//		//this is an overridden method from the word class
-//		}
+	//@Override
+	public void createClue()
+		{
+		clueList.add(3 , clue);
+		}
 //	@Override
 //	public void covert()
 //		{

@@ -2,9 +2,9 @@ import java.util.Collections;
 import java.util.Scanner;
 import java.util.ArrayList;
 
-public class Anagram extends Word
+public class Anagram extends Clues
 	{
-	
+	public static String clue ="";
 	//@Override
 	public static String promptUser()
 		{
@@ -16,27 +16,24 @@ public class Anagram extends Word
 	
 	public static String makeAnagram(String s)
 		{
-		ArrayList shuffle = new ArrayList();
+		ArrayList <String> shuffle = new ArrayList();
 			for(int i = 0; i < s.length(); i ++)
 				{
-				shuffle.add(i);
+				shuffle.add(i, s.substring(i , i + 1));
 				}
 			Collections.shuffle(shuffle);
-			System.out.println(shuffle);
-			String clue = "";
 
 		for (int w = 0; w < shuffle.size(); w ++)
 			{
-			clue = clue + shuffle.get(w);
+			clue += shuffle.get(w);
 			}
 		System.out.println(clue);
 		return(clue);
-		//will take the input String make a anagram of that word
+
 		}
 //	@Override
-//	public void createClue()
-//		{
-//		System.out.println("An anagram for this word is ");
-//		//this is an overridden method from the word class
-//		}
+	public void createClue()
+		{
+		clueList.add(4 , clue);
+		}
 	}

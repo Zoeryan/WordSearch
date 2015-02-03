@@ -1,13 +1,12 @@
 import java.util.Scanner;
 
 
-public class Palindrome extends Word
+public class Palindrome extends Clues
 	{
-	String clue = "";
+	public static String clue = "";
 	//@Override
 	public static String promptUser()
 		{
-		//An overridden method from the word class
 		System.out.println("Please enter the word you want to make into a palindrome.");
 		Scanner input = new Scanner(System.in);
 		return input.next();
@@ -27,7 +26,6 @@ public class Palindrome extends Word
 	//@Override
 	public void createClue()
 		{
-		System.out.println("The palindrome of this word is " + clue);
-		//this is an overridden method from the word class
+		clueList.add(5 , clue);
 		}
 	}

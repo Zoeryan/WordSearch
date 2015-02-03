@@ -51,7 +51,7 @@ public class UserPrompt
 		case 4:
 			{
 			String userInputAnagram = Anagram.promptUser();
-			MorseCode.makeMorseCode(userInputAnagram);
+			Anagram.makeAnagram(userInputAnagram);
 			//Palindrome.makeClue(clue);
 			//Does not print the anagram
 			break;

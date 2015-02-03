@@ -1,8 +1,8 @@
 import java.util.Scanner;
 
-public class MorseCode extends Word implements Conversion
+public class MorseCode extends Clues implements Conversion
 	{
-	
+	public static String clue = "";
 	//@Override
 	public static String promptUser()
 		{
@@ -13,7 +13,7 @@ public class MorseCode extends Word implements Conversion
 	
 	public static String makeMorseCode(String u)
 		{
-		String clue = "";
+
 		String[] dots = { ".-", "-...", "-.-.", "-..", ".", "..-.", "--.",
 				"....", "..", ".---", "-.-", ".-..", "--", "-.", "---", ".--.",
 	            "--.-", ".-.", "...", "-", "..-", "...-", ".--", "-..-",
@@ -23,30 +23,29 @@ public class MorseCode extends Word implements Conversion
 	    	     "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v",
 	    	     "w", "x", "y", "z"};
 	    
-	    for(int i = 0; i < u.length(); i ++)
+	    for(int i = 0; i < u.length(); i++)
 	    	{
-	    	char[] chars = u.toCharArray();
-	    	if(u.substring(i , i + 1).equals(alpha[i]))
+	    	for(int j = 0; j < u.length(); j++)
 	    		{
-	    		dots[i] = alpha[i];
-	    		clue = (clue + dots[i]);	    		
+	    		if(u.substring(i , i + 1).equals(alpha[j]))
+	    			{
+	    			clue += dots[j];    		
+	    			}
 	    		}
-	    	
 	    	}
 	    System.out.println(clue);
-	    return("test");
+	    return(clue);
 		}
 	
-//	@Override
-//	public void createClue()
-//		{
-//		System.out.println("The morse of this word is ");
-//		//this is an overridden method from the word class
-//		}
-//	
+	//@Override
+	public void createClue()
+		{
+		clueList.add(2 , clue);
+		}
+	
 	@Override
 	public void covert()
 		{
-		//will convert to OP
+		//will convert to Morse Code
 		}
 	}
