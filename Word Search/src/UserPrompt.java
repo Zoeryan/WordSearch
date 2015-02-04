@@ -30,30 +30,25 @@ public class UserPrompt
 			{
 			String userInputPalindrome = Palindrome.promptUser();
 			Palindrome.makeAPalindrome(userInputPalindrome);
-			//Palindrome.makeClue(clue);
+			Palindrome.createClue();
 			break;
 			}
 		case 2:
 			{
 			String userInputMorse = MorseCode.promptUser();
 			MorseCode.makeMorseCode(userInputMorse);
-			//Palindrome.makeClue(clue);
-			//Does not print the morse code clue
 			break;
 			}
 		case 3: 
 			{
 			String userInputOPLanguage = OPLanguage.promptUser();
 			OPLanguage.makeOP(userInputOPLanguage);
-			//Palindrome.makeClue(clue);
 			break;
 			}
 		case 4:
 			{
 			String userInputAnagram = Anagram.promptUser();
 			Anagram.makeAnagram(userInputAnagram);
-			//Palindrome.makeClue(clue);
-			//Does not print the anagram
 			break;
 			}
 		case 5:

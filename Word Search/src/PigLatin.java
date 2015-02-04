@@ -15,7 +15,7 @@ public class PigLatin extends Clues //extends Word
 	
 	public static String makePigLatin(String u)
 		{
-
+		u = u.toLowerCase();
         char v = Character.toLowerCase(u.charAt(0));
 
         if (v == 'a' || v == 'e' || v == 'i' || v == 'o' || v == 'u')
@@ -28,13 +28,17 @@ public class PigLatin extends Clues //extends Word
             String first = u.substring(0 , 1);
             String slice = u.substring(1 , u.length());
             clue = slice + first + "ay";
+            clue = clue.toUpperCase();
             System.out.println(clue);
 		}
         return(clue);
 		}
-	//@Override
-	public void createClue(String q)
+	
+	
+	@Override
+	public void createClue()
 		{
-		clueList.add(5 , clue);
+		numberReference.add(5);
+		clueList.add(clue);
 		}
 	}

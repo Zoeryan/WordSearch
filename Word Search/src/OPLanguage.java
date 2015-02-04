@@ -1,6 +1,5 @@
 import java.util.Scanner;
 
-
 public class OPLanguage extends Clues
 	{
 	public static String clue = "";
@@ -15,25 +14,23 @@ public class OPLanguage extends Clues
 	
 	public static String makeOP(String w)
 		{
+		w = w.toLowerCase();
 		int length = w.length();
 		String clue = "";
-		for (int i = 0; i < length - 1; i = i + 2)
+		for (int i = 0; i < length - 1; i++)
 			{
 			clue = (w.substring(i , i + 2)) + "op";
 			}
-
+		clue = clue.toUpperCase();
 		System.out.println(clue);
 		return("test");
 		}
 	
-	//@Override
+	@Override
 	public void createClue()
 		{
-		clueList.add(3 , clue);
+		numberReference.add(3);
+		clueList.add(clue);
 		}
-//	@Override
-//	public void covert()
-//		{
-//		//will convert to OP
-//		}
+
 	}

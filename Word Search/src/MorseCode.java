@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class MorseCode extends Clues implements Conversion
+public class MorseCode extends Clues
 	{
 	public static String clue = "";
 	//@Override
@@ -13,39 +13,36 @@ public class MorseCode extends Clues implements Conversion
 	
 	public static String makeMorseCode(String u)
 		{
-
+		u = u.toLowerCase();
 		String[] dots = { ".-", "-...", "-.-.", "-..", ".", "..-.", "--.",
 				"....", "..", ".---", "-.-", ".-..", "--", "-.", "---", ".--.",
 	            "--.-", ".-.", "...", "-", "..-", "...-", ".--", "-..-",
 	            "-.--", "--..", ".----", "..---"};
 	            
-	    String[] alpha = { "a", "b", "c", "d", "e", "f", "g", "h", "i", "j",
-	    	     "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v",
-	    	     "w", "x", "y", "z"};
+	    char [] alpha = { 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j',
+	    	     'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v',
+	    	     'w', 'x','y', 'z'};
 	    
-	    for(int i = 0; i < u.length(); i++)
+	    for(int i = 0; i < alpha.length; i++)
 	    	{
 	    	for(int j = 0; j < u.length(); j++)
 	    		{
-	    		if(u.substring(i , i + 1).equals(alpha[j]))
+	    		if(alpha[i] == u.charAt(j))
 	    			{
-	    			clue += dots[j];    		
+	    			clue += dots[i] + " ";
 	    			}
 	    		}
 	    	}
+	    clue = clue.toUpperCase();
 	    System.out.println(clue);
 	    return(clue);
 		}
 	
-	//@Override
+	@Override
 	public void createClue()
 		{
-		clueList.add(2 , clue);
+		numberReference.add(2);
+		clueList.add(clue);
 		}
 	
-	@Override
-	public void covert()
-		{
-		//will convert to Morse Code
-		}
 	}

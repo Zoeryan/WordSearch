@@ -1,16 +1,19 @@
 import java.util.ArrayList;
 
-public class Clues
+public abstract class Clues
 	{
 	public static ArrayList clueList = new ArrayList();
+	public static ArrayList numberReference = new ArrayList();
 	
+	public abstract void createClue();
 	public static void printClues()
 		{
-		
 		for(int i = 0; i < clueList.size(); i ++)
 			{
+			System.out.println("test");
 			switch(i)
 				{
+				
 				case 1: 
 					{
 					System.out.println("The palindrome of this word is " + clueList.get(i) + ".");
@@ -38,6 +41,6 @@ public class Clues
 					}
 				}
 			}
-		//will take the assembled clues from all other classes and print them out
+		System.out.println(clueList);
 		}
 	}

@@ -32,12 +32,12 @@ public class MainScreen extends JPanel
 		}
 	public static void makeMainScreen()
 		{
-		Object[] optionOne = {"Palindrome" , "Morse Code" , "OP Language" , "Anagram" , "Pig Latin"};
+		Object[] optionOne = {"Palindrome" , "Morse Code" , "OP Language" , "Anagram" , "Pig Latin", "Finish"};
 		type = JOptionPane.showOptionDialog(frame, "What kind of clue do you want to make?",
 				"Clue Choice",
 				JOptionPane.YES_NO_CANCEL_OPTION,
 				JOptionPane.QUESTION_MESSAGE,
-				null, optionOne, optionOne[4]);	
+				null, optionOne, optionOne[5]);	
 		
 	switch(type)
 	{
@@ -79,12 +79,16 @@ public class MainScreen extends JPanel
 		//Palindrome.makeClue(clue);
 		break;
 		}
-	
-	default:
+	case 5:
 		{
-		System.out.println("Please select one of the listed options.");
-		//printMainScreen();
+		Clues.printClues();
+		Board.makeBoard();
+		Board.fillBoard();
+		Board.fillRandom();
+		Board.printBoard();
+		System.out.println("Here is your word search!");
 		}
+
 	}
 		}
 

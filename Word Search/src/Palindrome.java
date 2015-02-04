@@ -14,18 +14,22 @@ public class Palindrome extends Clues
 	
 	public static String makeAPalindrome(String s)
 		{
+		s = s.toLowerCase();
 		int length = s.length();
 		String clue = "";
 		for ( int i = length - 1 ; i >= 0 ; i-- )
+			{
 		     clue = clue + s.charAt(i);
-
+			}
+		clue = clue.toUpperCase();
 		System.out.println(clue);
-		return("test");
+		return(clue);
 		}
 	
 	//@Override
-	public void createClue()
+	public static void createClue()
 		{
-		clueList.add(5 , clue);
+		numberReference.add(1);
+		clueList.add(clue);
 		}
 	}
