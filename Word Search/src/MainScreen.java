@@ -14,20 +14,10 @@ public class MainScreen extends JPanel
 			
 	public static void welcomeUser()
 		{
-		Object[] welcome = {"Continue"};
-		type = JOptionPane.showOptionDialog(frame, "Let's make a word search!",
+		JOptionPane.showMessageDialog(frame, "Let's make a word search!",
 				"Welcome",
-				JOptionPane.YES_NO_CANCEL_OPTION,
-				JOptionPane.QUESTION_MESSAGE,
-				null,welcome, welcome[0]);	
+				JOptionPane.QUESTION_MESSAGE);	
 			
-	switch(type)
-		{
-		case 0:
-			{
-			makeMainScreen();
-			}
-		}
 		
 		}
 	public static void makeMainScreen()
@@ -45,7 +35,8 @@ public class MainScreen extends JPanel
 	case 0: 
 		{
 		String userInputPalindrome = Palindrome.promptUser();
-		Palindrome.makeAPalindrome(userInputPalindrome);	
+		Palindrome.makeAPalindrome(userInputPalindrome);
+		makeMainScreen();
 		//Palindrome.makeClue(clue);
 		break;
 		}
@@ -53,14 +44,15 @@ public class MainScreen extends JPanel
 		{
 		String userInputMorse = MorseCode.promptUser();
 		MorseCode.makeMorseCode(userInputMorse);
+		makeMainScreen();
 		//Palindrome.makeClue(clue);
-		//Does not print the morse code clue
 		break;
 		}
 	case 2: 
 		{
 		String userInputOPLanguage = OPLanguage.promptUser();
 		OPLanguage.makeOP(userInputOPLanguage);
+		makeMainScreen();
 		//Palindrome.makeClue(clue);
 		break;
 		}
@@ -68,14 +60,15 @@ public class MainScreen extends JPanel
 		{
 		String userInputAnagram = Anagram.promptUser();
 		Anagram.makeAnagram(userInputAnagram);
+		makeMainScreen();
 		//Palindrome.makeClue(clue);
-		//Does not print the anagram
 		break;
 		}
 	case 4:
 		{
 		String userInputPigLatin = PigLatin.promptUser();
 		PigLatin.makePigLatin(userInputPigLatin);
+		makeMainScreen();
 		//Palindrome.makeClue(clue);
 		break;
 		}

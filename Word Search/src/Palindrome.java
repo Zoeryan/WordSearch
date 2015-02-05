@@ -1,15 +1,21 @@
 import java.util.Scanner;
-
+import javax.swing.JOptionPane;
+import javax.swing.JFrame;
 
 public class Palindrome extends Clues
 	{
 	public static String clue = "";
+	public Palindrome(int r, String c)
+		{
+		super(r, c);
+		}
 	//@Override
+	
 	public static String promptUser()
 		{
-		System.out.println("Please enter the word you want to make into a palindrome.");
-		Scanner input = new Scanner(System.in);
-		return input.next();
+		JFrame frame = new JFrame();
+		String clue = JOptionPane.showInputDialog(frame, "Please enter the word you want to make into a palindrome.");
+		return clue;
 		}
 	
 	public static String makeAPalindrome(String s)
@@ -27,9 +33,8 @@ public class Palindrome extends Clues
 		}
 	
 	//@Override
-	public static void createClue()
+	public void createClue()
 		{
-		numberReference.add(1);
-		clueList.add(clue);
+		clueList.add(new Clues(1, clue));
 		}
 	}

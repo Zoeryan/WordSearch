@@ -1,16 +1,21 @@
 import java.util.Scanner;
 
+import javax.swing.JOptionPane;
+import javax.swing.JFrame;
+
 public class PigLatin extends Clues //extends Word
 	{
 	public static String clue = "";
-	
+	public PigLatin(int r, String c)
+		{
+		super(r, c);
+		}
 	//@Override
 	public static String promptUser()
 		{
-		System.out.println("Please enter the word you want to convert to Pig Latin.");
-		Scanner input = new Scanner(System.in);
-		String findFirstVowel = "";
-		return findFirstVowel = input.nextLine();
+		JFrame frame = new JFrame();
+		String clue = JOptionPane.showInputDialog(frame, "Please enter the word you want to make into Pig Latin.");
+		return clue;
 		}
 	
 	public static String makePigLatin(String u)
@@ -35,10 +40,10 @@ public class PigLatin extends Clues //extends Word
 		}
 	
 	
-	@Override
+	//@Override
 	public void createClue()
 		{
-		numberReference.add(5);
-		clueList.add(clue);
+		clueList.add(new Clues(5, clue));
 		}
 	}
+a

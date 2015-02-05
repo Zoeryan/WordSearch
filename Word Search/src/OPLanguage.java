@@ -1,15 +1,20 @@
 import java.util.Scanner;
+import javax.swing.JOptionPane;
+import javax.swing.JFrame;
 
 public class OPLanguage extends Clues
 	{
 	public static String clue = "";
+	public OPLanguage(int r, String c)
+		{
+		super(r, c);
+		}
 	//@Override
 	public static String promptUser()
 		{
-		//An overridden method from the word class
-		System.out.println("Please enter the word you want to convert to the OP language.");
-		Scanner input = new Scanner(System.in);
-		return input.next();
+		JFrame frame = new JFrame();
+		String clue = JOptionPane.showInputDialog(frame, "Please enter the word you want to convert to the OP language.");
+		return clue;
 		}
 	
 	public static String makeOP(String w)
@@ -26,11 +31,10 @@ public class OPLanguage extends Clues
 		return("test");
 		}
 	
-	@Override
+	//@Override
 	public void createClue()
 		{
-		numberReference.add(3);
-		clueList.add(clue);
+		clueList.add(new Clues(3, clue));
 		}
 
 	}

@@ -1,14 +1,22 @@
 import java.util.Scanner;
+import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 
 public class MorseCode extends Clues
 	{
+
+	public MorseCode(int r, String c)
+		{
+		super(r, c);
+		}
+
 	public static String clue = "";
 	//@Override
 	public static String promptUser()
 		{
-		System.out.println("Please enter the word you want to convert to Morse Code.");
-		Scanner input = new Scanner(System.in);
-		return input.next();
+		JFrame frame = new JFrame();
+		String clue = JOptionPane.showInputDialog(frame, "Please enter the word you want to convert to Morse Code.");
+		return clue;
 		}
 	
 	public static String makeMorseCode(String u)
@@ -38,11 +46,10 @@ public class MorseCode extends Clues
 	    return(clue);
 		}
 	
-	@Override
+	//@Override
 	public void createClue()
 		{
-		numberReference.add(2);
-		clueList.add(clue);
+		clueList.add(new Clues(1 , clue));
 		}
 	
 	}

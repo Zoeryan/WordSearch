@@ -8,9 +8,7 @@ public class Runner
 		{
 		MainScreen.welcomeUser();
 		MainScreen.makeMainScreen();
-		
-		//UserPrompt.greetUser();
-		//UserPrompt.printMainScreen();
+		Clues c = new Clues(3, "HI");
 		}
 
 	}

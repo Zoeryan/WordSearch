@@ -2,15 +2,22 @@ import java.util.Collections;
 import java.util.Scanner;
 import java.util.ArrayList;
 
+import javax.swing.JOptionPane;
+import javax.swing.JFrame;
+
 public class Anagram extends Clues
 	{
 	public static String clue ="";
+	public Anagram(int r, String c)
+		{
+		super(r, c);
+		}
 	//@Override
 	public static String promptUser()
 		{
-		System.out.println("Please enter the word you want to make into an anagram.");
-		Scanner input = new Scanner(System.in);
-		return input.next();
+		JFrame frame = new JFrame();
+		String clue = JOptionPane.showInputDialog(frame, "Please enter the word you want to make into an anagram.");
+		return clue;
 		}
 	
 	public static String makeAnagram(String s)
@@ -33,11 +40,9 @@ public class Anagram extends Clues
 
 		}
 
-	@Override
+	//@Override
 	public void createClue()
 		{
-		numberReference.add(4);
-		clueList.add(clue);
-		System.out.println(clueList);
+		clueList.add(new Clues(4, clue));
 		}
 	}
