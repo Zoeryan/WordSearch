@@ -10,7 +10,6 @@ public class MorseCode extends Clues
 		super(r, c);
 		}
 
-	public static String clue = "";
 	//@Override
 	public static String promptUser()
 		{
@@ -43,13 +42,15 @@ public class MorseCode extends Clues
 	    	}
 	    clue = clue.toUpperCase();
 	    System.out.println(clue);
+	    clue = "";
 	    return(clue);
 		}
 	
 	//@Override
-	public void createClue()
+	public static void createClue()
 		{
-		clueList.add(new Clues(1 , clue));
+		Clues c = new Clues(2 , clue);
+		clueList.add(c);
 		}
 	
 	}

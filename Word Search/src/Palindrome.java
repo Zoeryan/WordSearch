@@ -3,8 +3,7 @@ import javax.swing.JOptionPane;
 import javax.swing.JFrame;
 
 public class Palindrome extends Clues
-	{
-	public static String clue = "";
+	{	
 	public Palindrome(int r, String c)
 		{
 		super(r, c);
@@ -22,19 +21,20 @@ public class Palindrome extends Clues
 		{
 		s = s.toLowerCase();
 		int length = s.length();
-		String clue = "";
 		for ( int i = length - 1 ; i >= 0 ; i-- )
 			{
-		     clue = clue + s.charAt(i);
+		     clue += s.charAt(i);
 			}
 		clue = clue.toUpperCase();
 		System.out.println(clue);
+		clue = "";
 		return(clue);
 		}
 	
 	//@Override
-	public void createClue()
+	public static void createClue()
 		{
-		clueList.add(new Clues(1, clue));
+		Clues c = new Clues(1 , clue);
+		clueList.add(c);
 		}
 	}

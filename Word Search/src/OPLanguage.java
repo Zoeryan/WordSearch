@@ -1,10 +1,11 @@
 import java.util.Scanner;
+
 import javax.swing.JOptionPane;
 import javax.swing.JFrame;
 
 public class OPLanguage extends Clues
 	{
-	public static String clue = "";
+
 	public OPLanguage(int r, String c)
 		{
 		super(r, c);
@@ -21,20 +22,21 @@ public class OPLanguage extends Clues
 		{
 		w = w.toLowerCase();
 		int length = w.length();
-		String clue = "";
 		for (int i = 0; i < length - 1; i++)
 			{
 			clue = (w.substring(i , i + 2)) + "op";
 			}
 		clue = clue.toUpperCase();
 		System.out.println(clue);
-		return("test");
+		clue = "";
+		return(clue);
 		}
 	
 	//@Override
-	public void createClue()
+	public static void createClue()
 		{
-		clueList.add(new Clues(3, clue));
+		Clues c = new Clues(3 , clue);
+		clueList.add(c);
 		}
 
 	}

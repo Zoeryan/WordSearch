@@ -25,8 +25,10 @@ public class PigLatin extends Clues //extends Word
 
         if (v == 'a' || v == 'e' || v == 'i' || v == 'o' || v == 'u')
         {
-            String convertToPigLatin = u + "ay";
-            System.out.println(convertToPigLatin);
+            clue = u + "ay";
+            clue = clue.toUpperCase();
+            System.out.println(clue);
+            clue = "";
         }
         else
         {
@@ -35,15 +37,16 @@ public class PigLatin extends Clues //extends Word
             clue = slice + first + "ay";
             clue = clue.toUpperCase();
             System.out.println(clue);
+            clue = "";
 		}
         return(clue);
 		}
 	
 	
 	//@Override
-	public void createClue()
+	public static void createClue()
 		{
-		clueList.add(new Clues(5, clue));
+		Clues c = new Clues(5 , clue);
+		clueList.add(c);
 		}
 	}
-a

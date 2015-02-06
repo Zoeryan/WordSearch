@@ -7,7 +7,6 @@ import javax.swing.JFrame;
 
 public class Anagram extends Clues
 	{
-	public static String clue ="";
 	public Anagram(int r, String c)
 		{
 		super(r, c);
@@ -36,13 +35,15 @@ public class Anagram extends Clues
 			}
 		clue = clue.toUpperCase();
 		System.out.println(clue);
+		clue = "";
 		return(clue);
 
 		}
 
 	//@Override
-	public void createClue()
+	public static void createClue()
 		{
-		clueList.add(new Clues(4, clue));
+		Clues c = new Clues(4 , clue);
+		clueList.add(c);
 		}
 	}

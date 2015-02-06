@@ -36,50 +36,50 @@ public class MainScreen extends JPanel
 		{
 		String userInputPalindrome = Palindrome.promptUser();
 		Palindrome.makeAPalindrome(userInputPalindrome);
-		makeMainScreen();
-		//Palindrome.makeClue(clue);
+		Palindrome.createClue();
+		makeMainScreen();	
 		break;
 		}
 	case 1:
 		{
 		String userInputMorse = MorseCode.promptUser();
 		MorseCode.makeMorseCode(userInputMorse);
-		makeMainScreen();
-		//Palindrome.makeClue(clue);
+		MorseCode.createClue();
+		makeMainScreen();	
 		break;
 		}
 	case 2: 
 		{
 		String userInputOPLanguage = OPLanguage.promptUser();
 		OPLanguage.makeOP(userInputOPLanguage);
-		makeMainScreen();
-		//Palindrome.makeClue(clue);
+		OPLanguage.createClue();
+		makeMainScreen();	
 		break;
 		}
 	case 3:
 		{
 		String userInputAnagram = Anagram.promptUser();
 		Anagram.makeAnagram(userInputAnagram);
+		Anagram.createClue();
 		makeMainScreen();
-		//Palindrome.makeClue(clue);
 		break;
 		}
 	case 4:
 		{
 		String userInputPigLatin = PigLatin.promptUser();
 		PigLatin.makePigLatin(userInputPigLatin);
+		PigLatin.createClue();
 		makeMainScreen();
-		//Palindrome.makeClue(clue);
 		break;
 		}
 	case 5:
 		{
 		Clues.printClues();
-		Board.makeBoard();
-		Board.fillBoard();
-		Board.fillRandom();
-		Board.printBoard();
-		System.out.println("Here is your word search!");
+//		Board.makeBoard();
+//		Board.fillBoard();
+//		Board.fillRandom();
+//		Board.printBoard();
+//		System.out.println("Here is your word search!");
 		}
 
 	}

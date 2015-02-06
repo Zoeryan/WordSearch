@@ -8,7 +8,7 @@ public class Runner
 		{
 		MainScreen.welcomeUser();
 		MainScreen.makeMainScreen();
-		Clues c = new Clues(3, "HI");
+		Clues.printClues();
 		}
 
 	}
