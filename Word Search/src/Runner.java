@@ -7,8 +7,6 @@ public class Runner
 	public static void main(String[] args)
 		{
 		MainScreen.welcomeUser();
-		MainScreen.makeMainScreen();
-		Clues.printClues();
 		}
 
 	}

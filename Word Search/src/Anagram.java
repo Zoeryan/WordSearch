@@ -15,8 +15,9 @@ public class Anagram extends Clues
 	public static String promptUser()
 		{
 		JFrame frame = new JFrame();
-		String clue = JOptionPane.showInputDialog(frame, "Please enter the word you want to make into an anagram.");
-		return clue;
+		String temp = JOptionPane.showInputDialog(frame, "Please enter the word you want to make into an anagram.");
+		Board.wordSearchWords.add(temp);
+		return temp;
 		}
 	
 	public static String makeAnagram(String s)
@@ -35,15 +36,15 @@ public class Anagram extends Clues
 			}
 		clue = clue.toUpperCase();
 		System.out.println(clue);
-		clue = "";
 		return(clue);
 
 		}
 
 	//@Override
-	public static void createClue()
+	public static void createClue(String cl)
 		{
-		Clues c = new Clues(4 , clue);
+		Clues c = new Clues(4 , cl);
 		clueList.add(c);
+		//Clues.clue = "";
 		}
 	}

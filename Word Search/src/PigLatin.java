@@ -5,7 +5,6 @@ import javax.swing.JFrame;
 
 public class PigLatin extends Clues //extends Word
 	{
-	public static String clue = "";
 	public PigLatin(int r, String c)
 		{
 		super(r, c);
@@ -14,8 +13,9 @@ public class PigLatin extends Clues //extends Word
 	public static String promptUser()
 		{
 		JFrame frame = new JFrame();
-		String clue = JOptionPane.showInputDialog(frame, "Please enter the word you want to make into Pig Latin.");
-		return clue;
+		String temp = JOptionPane.showInputDialog(frame, "Please enter the word you want to make into Pig Latin.");
+		Board.wordSearchWords.add(temp);
+		return temp;
 		}
 	
 	public static String makePigLatin(String u)
@@ -28,7 +28,6 @@ public class PigLatin extends Clues //extends Word
             clue = u + "ay";
             clue = clue.toUpperCase();
             System.out.println(clue);
-            clue = "";
         }
         else
         {
@@ -37,16 +36,16 @@ public class PigLatin extends Clues //extends Word
             clue = slice + first + "ay";
             clue = clue.toUpperCase();
             System.out.println(clue);
-            clue = "";
 		}
         return(clue);
 		}
 	
 	
 	//@Override
-	public static void createClue()
+	public static void createClue(String cl)
 		{
-		Clues c = new Clues(5 , clue);
+		Clues c = new Clues(5 , cl);
 		clueList.add(c);
+		//Clues.clue = "";
 		}
 	}
