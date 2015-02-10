@@ -3,7 +3,7 @@ import java.util.Scanner;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
-public class MorseCode extends Clues
+public class MorseCode extends Clues 
 	{
 
 	public MorseCode(int r, String c)
@@ -11,7 +11,7 @@ public class MorseCode extends Clues
 		super(r, c);
 		}
 
-	//@Override
+
 	public static String promptUser()
 		{
 		JFrame frame = new JFrame();
@@ -22,6 +22,7 @@ public class MorseCode extends Clues
 	
 	public static String makeMorseCode(String u)
 		{
+		Clues p = new Clues(2 , "");
 		u = u.toLowerCase();
 		String[] dots = { ".-", "-...", "-.-.", "-..", ".", "..-.", "--.",
 				"....", "..", ".---", "-.-", ".-..", "--", "-.", "---", ".--.",
@@ -38,21 +39,15 @@ public class MorseCode extends Clues
 	    		{
 	    		if(alpha[i] == u.charAt(j))
 	    			{
-	    			clue += dots[i] + " ";
+	    			p.setClue(p.getClue() + dots[i] + " ");
 	    			}
 	    		}
 	    	}
-	    clue = clue.toUpperCase();
-	    System.out.println(clue);
-	    return(clue);
+	    p.setClue(p.getClue().toUpperCase());	
+		System.out.println(p.getClue());
+		Clues.clueList.add(p);
+		return p.getClue();
 		}
-	
-	//@Override
-	public static void createClue(String cl)
-		{
-		Clues c = new Clues(2 , cl);
-		clueList.add(c);
-		//Clues.clue = "";
-		}
+
 	
 	}

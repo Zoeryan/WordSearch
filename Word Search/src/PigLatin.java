@@ -3,13 +3,13 @@ import java.util.Scanner;
 import javax.swing.JOptionPane;
 import javax.swing.JFrame;
 
-public class PigLatin extends Clues //extends Word
+public class PigLatin extends Clues
 	{
 	public PigLatin(int r, String c)
 		{
 		super(r, c);
 		}
-	//@Override
+
 	public static String promptUser()
 		{
 		JFrame frame = new JFrame();
@@ -20,32 +20,28 @@ public class PigLatin extends Clues //extends Word
 	
 	public static String makePigLatin(String u)
 		{
+		Clues s = new Clues(5 , "");
 		u = u.toLowerCase();
         char v = Character.toLowerCase(u.charAt(0));
 
         if (v == 'a' || v == 'e' || v == 'i' || v == 'o' || v == 'u')
         {
-            clue = u + "ay";
-            clue = clue.toUpperCase();
-            System.out.println(clue);
+            s.setClue(u + "ay");
+            s.setClue(s.getClue().toUpperCase());	
+    		System.out.println(s.getClue());
+    		Clues.clueList.add(s);
         }
         else
         {
             String first = u.substring(0 , 1);
             String slice = u.substring(1 , u.length());
-            clue = slice + first + "ay";
-            clue = clue.toUpperCase();
-            System.out.println(clue);
+            s.setClue(slice + first + "ay");
+            s.setClue(s.getClue().toUpperCase());	
+    		System.out.println(s.getClue());
+    		Clues.clueList.add(s);
+
 		}
-        return(clue);
+		return s.getClue();
 		}
-	
-	
-	//@Override
-	public static void createClue(String cl)
-		{
-		Clues c = new Clues(5 , cl);
-		clueList.add(c);
-		//Clues.clue = "";
-		}
+
 	}

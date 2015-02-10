@@ -3,14 +3,14 @@ import java.util.Scanner;
 import javax.swing.JOptionPane;
 import javax.swing.JFrame;
 
-public class Palindrome extends Clues
+public class Palindrome extends Clues 
 	{	
 	public Palindrome(int r, String c)
 		{
 		super(r, c);
 		}
 	
-	//@Override
+	
 	public static String promptUser()
 		{
 		JFrame frame = new JFrame();
@@ -21,22 +21,17 @@ public class Palindrome extends Clues
 	
 	public static String makeAPalindrome(String s)
 		{
+		Clues n = new Clues(1 , "");
 		s = s.toLowerCase();
 		int length = s.length();
 		for ( int i = length - 1 ; i >= 0 ; i-- )
 			{
-		     clue += s.charAt(i);
+		    n.setClue(n.getClue() + s.substring(i , i + 1));
 			}
-		clue = clue.toUpperCase();
-		System.out.println(clue);
-		return(clue);
+		n.setClue(n.getClue().toUpperCase());	
+		System.out.println(n.getClue());
+		Clues.clueList.add(n);
+		return n.getClue();
 		}
-	
-	//@Override
-	public static void createClue(String cl)
-		{
-		Clues c = new Clues(1 , cl);
-		clueList.add(c);
-		//Clues.clue = "";
-		}
-	}
+
+	} 

@@ -11,7 +11,7 @@ public class Anagram extends Clues
 		{
 		super(r, c);
 		}
-	//@Override
+
 	public static String promptUser()
 		{
 		JFrame frame = new JFrame();
@@ -22,6 +22,7 @@ public class Anagram extends Clues
 	
 	public static String makeAnagram(String s)
 		{
+		Clues b = new Clues(4 , "");
 		s = s.toLowerCase();
 		ArrayList <String> shuffle = new ArrayList();
 			for(int i = 0; i < s.length(); i ++)
@@ -32,19 +33,14 @@ public class Anagram extends Clues
 
 		for (int w = 0; w < shuffle.size(); w ++)
 			{
-			clue += shuffle.get(w);
+			b.setClue(b.getClue() + shuffle.get(w));
 			}
-		clue = clue.toUpperCase();
-		System.out.println(clue);
-		return(clue);
+		b.setClue(b.getClue().toUpperCase());	
+		System.out.println(b.getClue());
+		Clues.clueList.add(b);
+		return b.getClue();
 
 		}
 
-	//@Override
-	public static void createClue(String cl)
-		{
-		Clues c = new Clues(4 , cl);
-		clueList.add(c);
-		//Clues.clue = "";
-		}
+	
 	}

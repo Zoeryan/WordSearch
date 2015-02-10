@@ -2,7 +2,8 @@ import java.util.ArrayList;
 import java.util.Random;
 public class Board
 	{
-	public static  ArrayList <String> wordSearchWords = new ArrayList<String>(); 
+	public static ArrayList <String>wordSearchWords = new ArrayList<String>(); 
+
 	static char board[][] = new char[20][20];
 	public static void fillRandom()
 		{
@@ -21,52 +22,31 @@ public class Board
 	public static void fillBoard()
 		{
 		for(int i = 0; i < Clues.clueList.size(); i ++)
-			{
-			String wordSearchInput = wordSearchWords.get(i);
-			int length = wordSearchInput.length();
+			{	
+			String input = wordSearchWords.get(i);
+			int length = input.length();
 			int row = (int) (Math.random() * 20);
 			int col = (int) (Math.random() * 20);
-			if(i % 2 == 0)
 				{									
 				if((20 - col) > length)
 					{
-					row = (int) (Math.random() * 20);
-					col = (int) (Math.random() * 20);
+					
 					}
 				else
 					{
 					for(int y = 0; y < length; y++)
 						{
-						board[row][col] = wordSearchInput.charAt(y);
-						}
-					}	
-				}
-			
-			for(int v = 0; v < wordSearchInput.length(); v++)
-				{
-				if(i % 2 != 0)
-					{
-						{									
-						if((20 - col) > length)
-							{
-							row = (int) (Math.random() * 20);
-							col = (int) (Math.random() * 20);
-							}
-						else
-							{
-							for(int y = length; y > 0; y++)
-								{
-								board[row][col] = wordSearchInput.charAt(y);
-								}
-							}	
+						board[row][col] = input.charAt(y);
 						}
 					}
 				}
+				
 			}
 		}
 	
 	public static void printBoard()
 		{
+		System.out.println(wordSearchWords);
 		for(int row = 0; row < board.length; row++)
 			{
 			for(int col = 0; col < board[row].length; col ++)

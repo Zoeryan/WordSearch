@@ -35,7 +35,6 @@ public class MainScreen extends JPanel
 		{
 		String userInputPalindrome = Palindrome.promptUser();
 		Palindrome.makeAPalindrome(userInputPalindrome);
-		Palindrome.createClue(Clues.clue);
 		makeMainScreen();	
 		break;
 		}
@@ -43,7 +42,6 @@ public class MainScreen extends JPanel
 		{
 		String userInputMorse = MorseCode.promptUser();
 		MorseCode.makeMorseCode(userInputMorse);
-		MorseCode.createClue(Clues.clue);
 		makeMainScreen();	
 		break;
 		}
@@ -51,7 +49,6 @@ public class MainScreen extends JPanel
 		{
 		String userInputOPLanguage = OPLanguage.promptUser();
 		OPLanguage.makeOP(userInputOPLanguage);
-		OPLanguage.createClue(Clues.clue);
 		makeMainScreen();	
 		break;
 		}
@@ -59,7 +56,6 @@ public class MainScreen extends JPanel
 		{
 		String userInputAnagram = Anagram.promptUser();
 		Anagram.makeAnagram(userInputAnagram);
-		Anagram.createClue(Clues.clue);
 		makeMainScreen();
 		break;
 		}
@@ -67,7 +63,6 @@ public class MainScreen extends JPanel
 		{
 		String userInputPigLatin = PigLatin.promptUser();
 		PigLatin.makePigLatin(userInputPigLatin);
-		PigLatin.createClue(Clues.clue);
 		makeMainScreen();
 		break;
 		}

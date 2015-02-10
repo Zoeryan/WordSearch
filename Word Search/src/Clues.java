@@ -3,7 +3,7 @@ import java.util.ArrayList;
 public class Clues
 	{
 	public int referenceNumber;
-	public static String clue;
+	public String clue;
 	
 	public Clues(int r, String c)
 		{
@@ -12,7 +12,7 @@ public class Clues
 		}
 	
 	public static ArrayList <Clues> clueList = new ArrayList<Clues>();
-
+	
 
 	public int getReferenceNumber()
 		{
@@ -24,11 +24,23 @@ public class Clues
 		{
 		return clue;
 		}
+	
+	public void setReferenceNumber(int referenceNumber)
+		{
+		this.referenceNumber = referenceNumber;
+		}
+
+
+	public void setClue(String clue)
+		{
+		this.clue = clue;
+		}
+
 
 	public static void printClues()
 		{
-		System.out.println("CLUES:");
 		System.out.println();
+		System.out.println("CLUES:");
 		for(int i = 0; i < clueList.size(); i++)
 			{
 			if(clueList.get(i).getReferenceNumber() == 1)
