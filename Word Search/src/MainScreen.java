@@ -68,6 +68,8 @@ public class MainScreen extends JPanel
 		}
 	case 5:
 		{
+		System.out.println("Here is your word search!");
+		System.out.println();
 		Clues.printClues();
 		Board.fillRandom();
 		Board.fillBoard();

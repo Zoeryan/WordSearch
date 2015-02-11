@@ -39,7 +39,6 @@ public class Clues
 
 	public static void printClues()
 		{
-		System.out.println();
 		System.out.println("CLUES:");
 		for(int i = 0; i < clueList.size(); i++)
 			{

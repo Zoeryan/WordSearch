@@ -1,5 +1,4 @@
 import java.util.Scanner;
-
 import javax.swing.JOptionPane;
 import javax.swing.JFrame;
 
@@ -14,13 +13,25 @@ public class PigLatin extends Clues
 		{
 		JFrame frame = new JFrame();
 		String temp = JOptionPane.showInputDialog(frame, "Please enter the word you want to make into Pig Latin.");
-		Board.wordSearchWords.add(temp);
+		for(int i = 0; i < temp.length(); i ++)
+			{
+			if(Character.isLetter(temp.charAt(i)))
+				{
+				//temp = temp.toUpperCase();
+				Board.wordSearchWords.add(temp);			
+				}
+			else
+				{
+				System.out.println("Please enter a word.");
+				MainScreen.makeMainScreen();
+				}
+			}
 		return temp;
 		}
 	
 	public static String makePigLatin(String u)
 		{
-		Clues s = new Clues(5 , "");
+		Clues s = new Clues(5 , ""); 
 		u = u.toLowerCase();
         char v = Character.toLowerCase(u.charAt(0));
 
@@ -28,7 +39,6 @@ public class PigLatin extends Clues
         {
             s.setClue(u + "ay");
             s.setClue(s.getClue().toUpperCase());	
-    		System.out.println(s.getClue());
     		Clues.clueList.add(s);
         }
         else
@@ -37,7 +47,6 @@ public class PigLatin extends Clues
             String slice = u.substring(1 , u.length());
             s.setClue(slice + first + "ay");
             s.setClue(s.getClue().toUpperCase());	
-    		System.out.println(s.getClue());
     		Clues.clueList.add(s);
 
 		}

@@ -16,7 +16,19 @@ public class Anagram extends Clues
 		{
 		JFrame frame = new JFrame();
 		String temp = JOptionPane.showInputDialog(frame, "Please enter the word you want to make into an anagram.");
-		Board.wordSearchWords.add(temp);
+		for(int i = 0; i < temp.length(); i ++)
+			{
+			if(Character.isLetter(temp.charAt(i)))
+				{
+				//temp = temp.toUpperCase();
+				Board.wordSearchWords.add(temp);			
+				}
+			else
+				{
+				System.out.println("Please enter a word.");
+				MainScreen.makeMainScreen();
+				}
+			}
 		return temp;
 		}
 	
@@ -36,7 +48,6 @@ public class Anagram extends Clues
 			b.setClue(b.getClue() + shuffle.get(w));
 			}
 		b.setClue(b.getClue().toUpperCase());	
-		System.out.println(b.getClue());
 		Clues.clueList.add(b);
 		return b.getClue();
 

@@ -16,7 +16,19 @@ public class MorseCode extends Clues
 		{
 		JFrame frame = new JFrame();
 		String temp = JOptionPane.showInputDialog(frame, "Please enter the word you want to convert to Morse Code.");
-		Board.wordSearchWords.add(temp);
+		for(int i = 0; i < temp.length(); i ++)
+			{
+			if(Character.isLetter(temp.charAt(i)))
+				{
+				//temp = temp.toUpperCase();
+				Board.wordSearchWords.add(temp);			
+				}
+			else
+				{
+				System.out.println("Please enter a word.");
+				MainScreen.makeMainScreen();
+				}
+			}		
 		return temp;
 		}
 	
@@ -44,7 +56,6 @@ public class MorseCode extends Clues
 	    		}
 	    	}
 	    p.setClue(p.getClue().toUpperCase());	
-		System.out.println(p.getClue());
 		Clues.clueList.add(p);
 		return p.getClue();
 		}

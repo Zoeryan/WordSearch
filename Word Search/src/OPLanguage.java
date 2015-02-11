@@ -17,7 +17,19 @@ public class OPLanguage extends Clues
 		{
 		JFrame frame = new JFrame();
 		String temp = JOptionPane.showInputDialog(frame, "Please enter the word you want to convert to the OP language.");
-		Board.wordSearchWords.add(temp);
+		for(int i = 0; i < temp.length(); i ++)
+			{
+			if(Character.isLetter(temp.charAt(i)))
+				{
+				//temp = temp.toUpperCase();
+				Board.wordSearchWords.add(temp);			
+				}
+			else
+				{
+				System.out.println("Please enter a word.");
+				MainScreen.makeMainScreen();
+				}
+			}
 		return temp;
 		}
 	
@@ -31,7 +43,6 @@ public class OPLanguage extends Clues
 			c.setClue((w.substring(i , i + 2)) + "op");
 			}
 		c.setClue(c.getClue().toUpperCase());	
-		System.out.println(c.getClue());
 		Clues.clueList.add(c);
 		return c.getClue();
 		}

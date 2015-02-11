@@ -15,7 +15,19 @@ public class Palindrome extends Clues
 		{
 		JFrame frame = new JFrame();
 		String temp = JOptionPane.showInputDialog(frame, "Please enter the word you want to make into a palindrome.");
-		Board.wordSearchWords.add(temp);
+		for(int i = 0; i < temp.length(); i ++)
+			{
+			if(Character.isLetter(temp.charAt(i)))
+				{
+				//temp = temp.toUpperCase();
+				Board.wordSearchWords.add(temp);			
+				}
+			else
+				{
+				System.out.println("Please enter a word.");
+				MainScreen.makeMainScreen();
+				}
+			}	
 		return temp;
 		}
 	
@@ -29,7 +41,6 @@ public class Palindrome extends Clues
 		    n.setClue(n.getClue() + s.substring(i , i + 1));
 			}
 		n.setClue(n.getClue().toUpperCase());	
-		System.out.println(n.getClue());
 		Clues.clueList.add(n);
 		return n.getClue();
 		}
