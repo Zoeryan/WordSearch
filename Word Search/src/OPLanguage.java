@@ -21,8 +21,7 @@ public class OPLanguage extends Clues
 			{
 			if(Character.isLetter(temp.charAt(i)))
 				{
-				//temp = temp.toUpperCase();
-				Board.wordSearchWords.add(temp);			
+							
 				}
 			else
 				{
@@ -30,6 +29,8 @@ public class OPLanguage extends Clues
 				MainScreen.makeMainScreen();
 				}
 			}
+		//temp = temp.toUpperCase();
+		Board.wordSearchWords.add(temp);
 		return temp;
 		}
 	

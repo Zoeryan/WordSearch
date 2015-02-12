@@ -20,15 +20,16 @@ public class MorseCode extends Clues
 			{
 			if(Character.isLetter(temp.charAt(i)))
 				{
-				//temp = temp.toUpperCase();
-				Board.wordSearchWords.add(temp);			
+							
 				}
 			else
 				{
 				System.out.println("Please enter a word.");
 				MainScreen.makeMainScreen();
 				}
-			}		
+			}	
+		//temp = temp.toUpperCase();
+		Board.wordSearchWords.add(temp);
 		return temp;
 		}
 	

@@ -24,7 +24,8 @@ public class Board
 	
 	public static void fillBoard()
 		{
-		for(int i = 0; i < wordSearchWords.size(); i ++)
+		int total = wordSearchWords.size();
+		for(int i = 0; i < total; i ++)
 			{	
 			if(i % 3 == 0)
 				{

@@ -20,8 +20,7 @@ public class Anagram extends Clues
 			{
 			if(Character.isLetter(temp.charAt(i)))
 				{
-				//temp = temp.toUpperCase();
-				Board.wordSearchWords.add(temp);			
+							
 				}
 			else
 				{
@@ -29,6 +28,8 @@ public class Anagram extends Clues
 				MainScreen.makeMainScreen();
 				}
 			}
+		//temp = temp.toUpperCase();
+		Board.wordSearchWords.add(temp);
 		return temp;
 		}
 	
